@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<assembly>
+    <id>plugin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <excludes>
+                <exclude>org.elasticsearch:elasticsearch</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+    <files>
+        <file>
+            <source>${project.build.directory}/exporter-bin/target/exporter</source>
+            <outputDirectory>bin</outputDirectory>
+            <destName>exporter-darwin64</destName>
+            <fileMode>0555</fileMode>
+        </file>
+        <!--file>
+            <source>${project.build.directory}/exporter-bin/target/exporter</source>
+            <outputDirectory>bin</outputDirectory>
+            <destName>exporter-linux64</destName>
+            <fileMode>0555</fileMode>
+        </file-->
+    </files>
+</assembly>
